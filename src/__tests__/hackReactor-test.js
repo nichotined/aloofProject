@@ -5,6 +5,7 @@ import {
   isOldEnoughToVote,
   addArrayProperty,
   computeCompoundInterest,
+  modulo,
 } from '../hackReactor';
 
 describe('hackReactor functions', () => {
@@ -34,5 +35,25 @@ describe('hackReactor functions', () => {
     const result = computeCompoundInterest(1500, 0.043, 4, 6);
     const expected = 438.8368221341061;
     expect(result).toBe(expected);
+  });
+  test('returns expacted number of modulo function test', () => {
+    const result = modulo(25, 4);
+    const expected = 1;
+    expect(result).toBe(expected);
+  });
+  test('returns NaN number of modulo function test', () => {
+    const result = modulo(1, 0);
+    const expected = NaN;
+    expect(result).toEqual(expected);
+  });
+  test('returns 0 number of modulo function test', () => {
+    const result = modulo(0, 1);
+    const expected = 0;
+    expect(result).toEqual(expected);
+  });
+  test('returns 0 number of modulo function test', () => {
+    const result = modulo(NaN, 1);
+    const expected = NaN;
+    expect(result).toEqual(expected);
   });
 });

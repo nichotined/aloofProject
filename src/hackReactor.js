@@ -58,10 +58,26 @@ function computeCompoundInterest(
   calculation -= principalValue;
   return calculation;
 }
+// modulo
+// TODO:{
+// var output = modulo(25, 4);
+// console.log(output); // --> 1
+// }
+function modulo(param1: number, param2: number): number {
+  if (param1 === 0) {
+    return 0;
+  } else if (param2 === 0) {
+    return NaN;
+  } else if (isNaN(param1) || isNaN(param2)) {
+    return NaN;
+  }
+  return param1 % param2;
+}
 export {
   isOldEnoughToDrink,
   isOldEnoughToDrive,
   isOldEnoughToVote,
   addArrayProperty,
   computeCompoundInterest,
+  modulo,
 };
