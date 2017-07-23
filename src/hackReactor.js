@@ -18,7 +18,7 @@ function isOldEnoughToDrive(age: number): boolean {
 // console.log(output); // --> true
 function isOldEnoughToVote(age?: number): boolean {
   const minAge = 18;
-  if (typeof age === 'undefined') {
+  if (typeof age !== 'number') {
     return false;
   }
   return age >= minAge;
@@ -67,6 +67,20 @@ function modulo(param1: number, param2: number): number {
   // TODO: I have to change this line below to not using the built-in function
   return param1 % param2;
 }
+// getIndexOf
+// var output = getIndexOf('a', 'I am a hacker');
+// console.log(output); // --> 2
+function getIndexOf(char: string, str: string): number {
+  const arr = str.split('');
+  let count = -1;
+  arr.forEach((element, index) => {
+    if (char === element) {
+      count = index;
+    }
+  });
+  return count;
+}
+
 export {
   isOldEnoughToDrink,
   isOldEnoughToDrive,
@@ -74,4 +88,5 @@ export {
   addArrayProperty,
   computeCompoundInterest,
   modulo,
+  getIndexOf,
 };

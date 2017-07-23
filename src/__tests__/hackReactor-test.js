@@ -6,6 +6,7 @@ import {
   addArrayProperty,
   computeCompoundInterest,
   modulo,
+  getIndexOf,
 } from '../hackReactor';
 
 describe('hackReactor functions', () => {
@@ -20,7 +21,7 @@ describe('hackReactor functions', () => {
     expect(result).toBe(expected);
   });
   test('returns bool of isOldEnoughToVote', () => {
-    const result = isOldEnoughToVote();
+    const result = isOldEnoughToVote(undefined);
     const expected = false;
     expect(result).toBe(expected);
   });
@@ -55,5 +56,10 @@ describe('hackReactor functions', () => {
     const result = modulo(NaN, 1);
     const expected = NaN;
     expect(result).toEqual(expected);
+  });
+  test('returns index value from param1 in param2 of getIndexOf function test', () => {
+    const result = getIndexOf('m', 'an ambal');
+    const expected = 4;
+    expect(result).toBe(expected);
   });
 });
