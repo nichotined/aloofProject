@@ -71,6 +71,7 @@ function modulo(param1: number, param2: number): number {
   } else if (isNaN(param1) || isNaN(param2)) {
     return NaN;
   }
+  // TODO: I have to change this line below to not using the built-in function
   return param1 % param2;
 }
 export {
