@@ -1,18 +1,14 @@
 // @flow
 // isOldEnoughToDrink
-// TODO:{
 // var output = isOldEnoughToDrink(22);
 // console.log(output); // --> true
-// }
 function isOldEnoughToDrink(age: number): boolean {
   const minAge = 21;
   return age >= minAge;
 }
 // isOldEnoughToDrive
-// TODO:{
 // var output = isOldEnoughToDrive(22);
 // console.log(output); // --> true
-// }
 function isOldEnoughToDrive(age: number): boolean {
   const minAge = 16;
   return age >= minAge;
@@ -20,7 +16,6 @@ function isOldEnoughToDrive(age: number): boolean {
 // isOldEnoughToVote
 // var output = isOldEnoughToVote(22);
 // console.log(output); // --> true
-
 function isOldEnoughToVote(age?: number): boolean {
   const minAge = 18;
   if (typeof age === 'undefined') {
@@ -59,10 +54,8 @@ function computeCompoundInterest(
   return calculation;
 }
 // modulo
-// TODO:{
 // var output = modulo(25, 4);
 // console.log(output); // --> 1
-// }
 function modulo(param1: number, param2: number): number {
   if (param1 === 0) {
     return 0;
