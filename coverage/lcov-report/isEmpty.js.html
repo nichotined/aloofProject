@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.31% </span>
+        <span class="strong">79.17% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>24/26</span>
+        <span class='fraction'>19/24</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.75% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>30/32</span>
+        <span class='fraction'>25/30</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,13 +35,13 @@
         <span class='fraction'>1/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.31% </span>
+        <span class="strong">80.95% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>24/26</span>
+        <span class='fraction'>17/21</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -78,12 +78,7 @@
 33
 34
 35
-36
-37
-38
-39
-40
-41</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+36</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
@@ -91,34 +86,29 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -126,39 +116,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// @flow
 &nbsp;
 function isEmpty(param: mixed): boolean {
-  const getParamType = typeof param;
+  const getParamType: string = typeof param;
   if (isNaN(param) &amp;&amp; getParamType !== 'object') {
     return false;
   } else if (param === null) {
     return false;
-  } else if (getParamType === 'string' || getParamType === 'boolean' || getParamType === 'number') {
-    console.log(getParamType);
-    if (param === 0) {
-      return false;
-    } else <span class="missing-if-branch" title="if path not taken" >I</span>if (param === false) {
-<span class="cstat-no" title="statement not covered" >      console.log('if bool');</span>
-<span class="cstat-no" title="statement not covered" >      return false;</span>
-    } else if (param === ' ') {
-      console.log('if whitspace');
-      return false;
-    }
-  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (getParamType === 'object') {
-    if (Array.isArray(param) /* true*/ &amp;&amp; param[0] === '') {
-      console.log('if empty array with empty string', param);
-      return false;
-    } else if (
-      Array.isArray(param) /* true*/ &amp;&amp;
-      Array.isArray(param[0]) &amp;&amp;
-      param[0][0] === undefined
-    ) {
-      console.log('if nested empty array', param);
-      return false;
-    } else if (Object.is(param, param) &amp;&amp; Object.values(param).length !== 0) {
-      return false;
-    }
   }
-  // if type not defined by above code
-  console.log('true ', param);
+  switch (getParamType) {
+    case 'string':
+      if (param === ' ') return false;
+      break;
+<span class="branch-1 cbranch-no" title="branch not covered" >    case 'boolean':</span>
+<span class="cstat-no" title="statement not covered" >      if (param === false) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+    case 'number':
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (param === 0) return false;
+<span class="cstat-no" title="statement not covered" >      break;</span>
+    case 'object':
+      if (Array.isArray(param) &amp;&amp; param[0] === '') {
+        return false;
+      } else if (Array.isArray(param) &amp;&amp; Array.isArray(param[0]) &amp;&amp; param[0][0] === undefined) {
+        return false;
+      } else if (Object.is(param, param) &amp;&amp; Object.values(param).length !== 0) {
+        return false;
+      }
+      break;
+<span class="branch-4 cbranch-no" title="branch not covered" >    default:</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+  }
   return true;
 }
 &nbsp;
@@ -169,7 +154,7 @@ export default isEmpty;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jul 23 2017 14:16:37 GMT+0700 (WIB)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jul 23 2017 20:55:33 GMT+0700 (WIB)
 </div>
 </div>
 <script src="prettify.js"></script>
